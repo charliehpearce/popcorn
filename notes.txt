@@ -1,0 +1,7 @@
+NOTES
+
+TMDB
+API key = 066fd2f276639da2465c0ded06948812
+
+It may be benificial to return strength as rating (from users) * (no matched nodes / total nodes matched)
+Total nodes matched can be a property of the movie nodes and can be run daily as a cronjob.
