@@ -33,7 +33,9 @@ class _LandingPageState extends State<LandingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       // body is set to the widget selected
-      body: _children[_currentIndex],
+      body: SafeArea(
+        child: _children[_currentIndex],
+      ),
       backgroundColor: kBackgroundColour,
 
       // Bottom navigation bar
