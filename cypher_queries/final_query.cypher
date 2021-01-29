@@ -5,3 +5,6 @@ WHERE count(r) >= 50
 RETURN m2.title AS title, 1.0*avg_rating*Count_1/Count_2 AS agg
 ORDER BY agg DESC 
 LIMIT 20;
+
+
+count(r)/Count_2 number of ratings)

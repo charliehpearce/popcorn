@@ -18,66 +18,76 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBackgroundColour,
-      body: SafeArea(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset('assets/img/logo.png'),
-                Text(
-                  "Find Movies You'll Love",
-                  style: TextStyle(fontSize: kFontSize, color: kTextColour),
-                ),
-                SizedBox(height: 50.0),
-                RoundedButton(
-                  onPressed: () {
-                    // change this
-                    Navigator.pushNamed(context, LandingPage.id);
-                  },
-                  colour: kAccentColour,
-                  child: Row(
-                    children: [
-                      FaIcon(
-                        FontAwesomeIcons.facebookSquare,
-                        color: Colors.white,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        'Log In With Facebook',
-                        style: TextStyle(color: kTextColour),
-                      ),
-                    ],
-                  ),
-                ),
-                RoundedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, LoginScreen.id);
-                  },
-                  colour: Color(0xff4DA8DA),
-                  child: Text(
-                    'Log In With Email',
-                    style: TextStyle(color: kTextColour),
-                  ),
-                ),
-                RoundedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, RegistrationScreen.id);
-                  },
-                  colour: Color(0xff4DA8DA),
-                  child: Text(
-                    'Register With',
-                    style: TextStyle(color: kTextColour),
-                  ),
-                ),
-              ],
-            )
-          ],
+      body: Stack(children: <Widget>[
+        Container(
+          height: double.infinity,
+          width: double.infinity,
+          child: FittedBox(
+            fit: BoxFit.fitHeight,
+            child: Image.asset('assets/img/bg.png'),
+          ),
         ),
-      ),
+        SafeArea(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset('assets/img/logo.png'),
+                  Text(
+                    "Find Movies You'll Love",
+                    style: TextStyle(fontSize: kFontSize, color: kTextColour),
+                  ),
+                  SizedBox(height: 50.0),
+                  RoundedButton(
+                    onPressed: () {
+                      // change this
+                      Navigator.pushNamed(context, LandingPage.id);
+                    },
+                    colour: kAccentColour,
+                    child: Row(
+                      children: [
+                        FaIcon(
+                          FontAwesomeIcons.facebookSquare,
+                          color: Colors.white,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          'Log In With Facebook',
+                          style: TextStyle(color: kTextColour),
+                        ),
+                      ],
+                    ),
+                  ),
+                  RoundedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, LoginScreen.id);
+                    },
+                    colour: Color(0xff4DA8DA),
+                    child: Text(
+                      'Log In With Email',
+                      style: TextStyle(color: kTextColour),
+                    ),
+                  ),
+                  RoundedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, RegistrationScreen.id);
+                    },
+                    colour: Color(0xff4DA8DA),
+                    child: Text(
+                      'Register With',
+                      style: TextStyle(color: kTextColour),
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+      ]),
     );
   }
 }
