@@ -32,7 +32,7 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // body is set to the widget selected
+      // body is set to the page(widget) selected
       body: SafeArea(
         child: _children[_currentIndex],
       ),

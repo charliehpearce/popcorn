@@ -3,19 +3,36 @@ import 'package:popcorn/components/constants.dart';
 
 class MovieSwipeCard extends StatelessWidget {
   final Color widgetColour;
-  MovieSwipeCard({this.widgetColour});
+  final String posterID;
+  MovieSwipeCard({
+    this.widgetColour,
+    this.posterID,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 650,
-      width: 500,
-      margin: EdgeInsets.all(20),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(
-            Radius.circular(20.0),
-          ),
-          color: widgetColour),
+    double cardWidth = MediaQuery.of(context).size.width;
+    double cardHeight = 0.65 * MediaQuery.of(context).size.height;
+
+    return Center(
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(15),
+        child: Column(
+          children: [
+            Image.network(
+              'https://image.tmdb.org/t/p/w400/$posterID.jpg',
+              height: cardHeight - 100,
+              width: cardWidth,
+              fit: BoxFit.cover,
+            ),
+            Container(
+              width: cardWidth,
+              height: 100,
+              color: Colors.black,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

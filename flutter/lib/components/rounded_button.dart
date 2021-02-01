@@ -10,6 +10,7 @@ class RoundedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // padding between buttons
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 5.0),
       child: Material(
