@@ -1,1 +1,1 @@
-Popcorn - A film reccomendation APP
+A film reccomendation app built on Neo4j
